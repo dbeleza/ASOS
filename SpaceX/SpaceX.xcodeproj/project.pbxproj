@@ -34,6 +34,7 @@
 		1F46C8EA2722C4440018F24A /* NetworkBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8E92722C4440018F24A /* NetworkBannerView.swift */; };
 		1F46C8EC2722C47B0018F24A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8EB2722C47B0018F24A /* Colors.xcassets */; };
 		1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */; };
+		1F46C8F02722CB7A0018F24A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8EF2722CB7A0018F24A /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		1F46C8E92722C4440018F24A /* NetworkBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBannerView.swift; sourceTree = "<group>"; };
 		1F46C8EB2722C47B0018F24A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SpaceX.swift"; sourceTree = "<group>"; };
+		1F46C8EF2722CB7A0018F24A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				1F46C8D02722B0440018F24A /* CompanyService */,
 				1F46C8CD2722AFD30018F24A /* ReachabilityService */,
 				1F46C8C52722AC600018F24A /* NetworkService */,
+				1F46C8EF2722CB7A0018F24A /* Services.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8EA2722C4440018F24A /* NetworkBannerView.swift in Sources */,
+				1F46C8F02722CB7A0018F24A /* Services.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
 				1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */,
