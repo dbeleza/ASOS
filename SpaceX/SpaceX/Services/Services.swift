@@ -15,6 +15,10 @@ public protocol HasCompanyService: AnyObject {
     var companyService: CompanyService { get }
 }
 
+public protocol HasLaunchService: AnyObject {
+    var launchService: LaunchService { get }
+}
+
 public protocol HasReachabilityService: AnyObject {
     var reachabilityService: ReachabilityService { get }
 }
