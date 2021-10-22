@@ -22,6 +22,7 @@
 		1F46C8C02722AA1D0018F24A /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8BB2722AA1D0018F24A /* AvenirLTStd-Medium.otf */; };
 		1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C12722AA500018F24A /* SpaceXFont.swift */; };
 		1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C62722AC8E0018F24A /* NetworkService.swift */; };
+		1F46C8C92722AE810018F24A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C82722AE810018F24A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1F46C8BB2722AA1D0018F24A /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
 		1F46C8C12722AA500018F24A /* SpaceXFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXFont.swift; sourceTree = "<group>"; };
 		1F46C8C62722AC8E0018F24A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1F46C8C82722AE810018F24A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				1F46C88F2722A6FF0018F24A /* Assets.xcassets */,
 				1F46C8912722A6FF0018F24A /* LaunchScreen.storyboard */,
 				1F46C8942722A6FF0018F24A /* Info.plist */,
+				1F46C8C82722AE810018F24A /* Constants.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
+				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +493,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75E66HR8AH;
 				GENERATE_INFOPLIST_FILE = YES;
+				Host = api.spacexdata.com;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -517,6 +522,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75E66HR8AH;
 				GENERATE_INFOPLIST_FILE = YES;
+				Host = api.spacexdata.com;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
