@@ -15,6 +15,12 @@
 		1F46C89E2722A7000018F24A /* SpaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C89D2722A7000018F24A /* SpaceXTests.swift */; };
 		1F46C8A82722A7000018F24A /* SpaceXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8A72722A7000018F24A /* SpaceXUITests.swift */; };
 		1F46C8AA2722A7000018F24A /* SpaceXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8A92722A7000018F24A /* SpaceXUITestsLaunchTests.swift */; };
+		1F46C8BC2722AA1D0018F24A /* AvenirLTStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8B72722AA1C0018F24A /* AvenirLTStd-Heavy.otf */; };
+		1F46C8BD2722AA1D0018F24A /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8B82722AA1C0018F24A /* AvenirLTStd-Black.otf */; };
+		1F46C8BE2722AA1D0018F24A /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8B92722AA1C0018F24A /* AvenirLTStd-Book.otf */; };
+		1F46C8BF2722AA1D0018F24A /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8BA2722AA1C0018F24A /* AvenirLTStd-Light.otf */; };
+		1F46C8C02722AA1D0018F24A /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8BB2722AA1D0018F24A /* AvenirLTStd-Medium.otf */; };
+		1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C12722AA500018F24A /* SpaceXFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		1F46C8A32722A7000018F24A /* SpaceXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F46C8A72722A7000018F24A /* SpaceXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITests.swift; sourceTree = "<group>"; };
 		1F46C8A92722A7000018F24A /* SpaceXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1F46C8B72722AA1C0018F24A /* AvenirLTStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Heavy.otf"; sourceTree = "<group>"; };
+		1F46C8B82722AA1C0018F24A /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		1F46C8B92722AA1C0018F24A /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		1F46C8BA2722AA1C0018F24A /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		1F46C8BB2722AA1D0018F24A /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
+		1F46C8C12722AA500018F24A /* SpaceXFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 		1F46C8852722A6FC0018F24A /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C8B62722A9D30018F24A /* Fonts */,
 				1F46C8862722A6FC0018F24A /* AppDelegate.swift */,
 				1F46C8882722A6FC0018F24A /* SceneDelegate.swift */,
 				1F46C88A2722A6FC0018F24A /* ViewController.swift */,
@@ -122,6 +135,19 @@
 				1F46C8A92722A7000018F24A /* SpaceXUITestsLaunchTests.swift */,
 			);
 			path = SpaceXUITests;
+			sourceTree = "<group>";
+		};
+		1F46C8B62722A9D30018F24A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8B82722AA1C0018F24A /* AvenirLTStd-Black.otf */,
+				1F46C8B92722AA1C0018F24A /* AvenirLTStd-Book.otf */,
+				1F46C8B72722AA1C0018F24A /* AvenirLTStd-Heavy.otf */,
+				1F46C8BA2722AA1C0018F24A /* AvenirLTStd-Light.otf */,
+				1F46C8BB2722AA1D0018F24A /* AvenirLTStd-Medium.otf */,
+				1F46C8C12722AA500018F24A /* SpaceXFont.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C8BC2722AA1D0018F24A /* AvenirLTStd-Heavy.otf in Resources */,
+				1F46C8BF2722AA1D0018F24A /* AvenirLTStd-Light.otf in Resources */,
+				1F46C8BE2722AA1D0018F24A /* AvenirLTStd-Book.otf in Resources */,
 				1F46C8932722A6FF0018F24A /* LaunchScreen.storyboard in Resources */,
+				1F46C8BD2722AA1D0018F24A /* AvenirLTStd-Black.otf in Resources */,
 				1F46C8902722A6FF0018F24A /* Assets.xcassets in Resources */,
+				1F46C8C02722AA1D0018F24A /* AvenirLTStd-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +287,7 @@
 			files = (
 				1F46C88B2722A6FC0018F24A /* ViewController.swift in Sources */,
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
+				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
