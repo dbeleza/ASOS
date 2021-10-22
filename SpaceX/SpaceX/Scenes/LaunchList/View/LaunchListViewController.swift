@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol LaunchListFilterOutput: AnyObject {
+    func applyFilter(isFilterActive: Bool, year: String, sortOrder: Int)
+}
+
+class LaunchFilterViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
-
-
 }
 

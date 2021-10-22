@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8862722A6FC0018F24A /* AppDelegate.swift */; };
 		1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8882722A6FC0018F24A /* SceneDelegate.swift */; };
-		1F46C88B2722A6FC0018F24A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C88A2722A6FC0018F24A /* ViewController.swift */; };
+		1F46C88B2722A6FC0018F24A /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C88A2722A6FC0018F24A /* LaunchListViewController.swift */; };
 		1F46C8902722A6FF0018F24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C88F2722A6FF0018F24A /* Assets.xcassets */; };
 		1F46C8932722A6FF0018F24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8912722A6FF0018F24A /* LaunchScreen.storyboard */; };
 		1F46C89E2722A7000018F24A /* SpaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C89D2722A7000018F24A /* SpaceXTests.swift */; };
@@ -35,6 +35,15 @@
 		1F46C8EC2722C47B0018F24A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8EB2722C47B0018F24A /* Colors.xcassets */; };
 		1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */; };
 		1F46C8F02722CB7A0018F24A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8EF2722CB7A0018F24A /* Services.swift */; };
+		1F46C8F82722E3700018F24A /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8F72722E3700018F24A /* LaunchService.swift */; };
+		1F46C8FA2722E4370018F24A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8F92722E4370018F24A /* Launch.swift */; };
+		1F46C8FC2722E45D0018F24A /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8FB2722E45D0018F24A /* Filter.swift */; };
+		1F46C8FF2722E7D70018F24A /* LaunchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8FE2722E7D70018F24A /* LaunchFilterViewController.swift */; };
+		1F46C9012722E8120018F24A /* LaunchFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9002722E8120018F24A /* LaunchFilterInteractor.swift */; };
+		1F46C9032722E82F0018F24A /* LaunchFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9022722E82F0018F24A /* LaunchFilterPresenter.swift */; };
+		1F46C9052722E8650018F24A /* LaunchFilterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9042722E8650018F24A /* LaunchFilterRouter.swift */; };
+		1F46C9072722E8C00018F24A /* UIButton+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9062722E8C00018F24A /* UIButton+SpaceX.swift */; };
+		1F46C90D2722E9560018F24A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C90C2722E9560018F24A /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +67,7 @@
 		1F46C8832722A6FC0018F24A /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F46C8862722A6FC0018F24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F46C8882722A6FC0018F24A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F46C88A2722A6FC0018F24A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F46C88A2722A6FC0018F24A /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		1F46C88F2722A6FF0018F24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F46C8922722A6FF0018F24A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F46C8942722A6FF0018F24A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +95,15 @@
 		1F46C8EB2722C47B0018F24A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SpaceX.swift"; sourceTree = "<group>"; };
 		1F46C8EF2722CB7A0018F24A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		1F46C8F72722E3700018F24A /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
+		1F46C8F92722E4370018F24A /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		1F46C8FB2722E45D0018F24A /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		1F46C8FE2722E7D70018F24A /* LaunchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterViewController.swift; sourceTree = "<group>"; };
+		1F46C9002722E8120018F24A /* LaunchFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterInteractor.swift; sourceTree = "<group>"; };
+		1F46C9022722E82F0018F24A /* LaunchFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterPresenter.swift; sourceTree = "<group>"; };
+		1F46C9042722E8650018F24A /* LaunchFilterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterRouter.swift; sourceTree = "<group>"; };
+		1F46C9062722E8C00018F24A /* UIButton+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+SpaceX.swift"; sourceTree = "<group>"; };
+		1F46C90C2722E9560018F24A /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,15 +155,14 @@
 		1F46C8852722A6FC0018F24A /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
-				1F46C8E82722C41E0018F24A /* CustomViews */,
-				1F46C8E52722C39C0018F24A /* Scenes */,
+				1F46C8C32722AAE70018F24A /* Core */,
 				1F46C8D32722B0F10018F24A /* Model */,
+				1F46C8E52722C39C0018F24A /* Scenes */,
 				1F46C8E22722B43B0018F24A /* Extensions */,
 				1F46C8DA2722B1ED0018F24A /* Localized */,
 				1F46C8C42722AC3C0018F24A /* Services */,
 				1F46C8B62722A9D30018F24A /* Fonts */,
-				1F46C8C32722AAE70018F24A /* Core */,
-				1F46C88A2722A6FC0018F24A /* ViewController.swift */,
+				1F46C8E82722C41E0018F24A /* CustomViews */,
 				1F46C8C82722AE810018F24A /* Constants.swift */,
 				1F46C88F2722A6FF0018F24A /* Assets.xcassets */,
 				1F46C8EB2722C47B0018F24A /* Colors.xcassets */,
@@ -197,6 +214,7 @@
 		1F46C8C42722AC3C0018F24A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C8F62722E3430018F24A /* LaunchService */,
 				1F46C8D02722B0440018F24A /* CompanyService */,
 				1F46C8CD2722AFD30018F24A /* ReachabilityService */,
 				1F46C8C52722AC600018F24A /* NetworkService */,
@@ -233,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				1F46C8D42722B1080018F24A /* Company.swift */,
+				1F46C8F92722E4370018F24A /* Launch.swift */,
+				1F46C8FB2722E45D0018F24A /* Filter.swift */,
 			);
 			name = Model;
 			path = Services;
@@ -252,6 +272,8 @@
 			children = (
 				1F46C8E32722B4500018F24A /* String+Placeholders.swift */,
 				1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */,
+				1F46C9062722E8C00018F24A /* UIButton+SpaceX.swift */,
+				1F46C90C2722E9560018F24A /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +281,8 @@
 		1F46C8E52722C39C0018F24A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C8F12722E2A30018F24A /* LaunchList */,
+				1F46C8FD2722E7B70018F24A /* LaunchFilter */,
 				1F46C8E62722C3CC0018F24A /* BaseViewController.swift */,
 			);
 			path = Scenes;
@@ -270,6 +294,97 @@
 				1F46C8E92722C4440018F24A /* NetworkBannerView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		1F46C8F12722E2A30018F24A /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8F52722E2C80018F24A /* Router */,
+				1F46C8F42722E2BF0018F24A /* Presenter */,
+				1F46C8F32722E2B50018F24A /* Interator */,
+				1F46C8F22722E2AB0018F24A /* View */,
+			);
+			path = LaunchList;
+			sourceTree = "<group>";
+		};
+		1F46C8F22722E2AB0018F24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C88A2722A6FC0018F24A /* LaunchListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F46C8F32722E2B50018F24A /* Interator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interator;
+			sourceTree = "<group>";
+		};
+		1F46C8F42722E2BF0018F24A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1F46C8F52722E2C80018F24A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1F46C8F62722E3430018F24A /* LaunchService */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8F72722E3700018F24A /* LaunchService.swift */,
+			);
+			name = LaunchService;
+			sourceTree = "<group>";
+		};
+		1F46C8FD2722E7B70018F24A /* LaunchFilter */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9082722E8E60018F24A /* View */,
+				1F46C9092722E8F40018F24A /* Interator */,
+				1F46C90A2722E8FC0018F24A /* Presenter */,
+				1F46C90B2722E9030018F24A /* Router */,
+			);
+			path = LaunchFilter;
+			sourceTree = "<group>";
+		};
+		1F46C9082722E8E60018F24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8FE2722E7D70018F24A /* LaunchFilterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F46C9092722E8F40018F24A /* Interator */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9002722E8120018F24A /* LaunchFilterInteractor.swift */,
+			);
+			path = Interator;
+			sourceTree = "<group>";
+		};
+		1F46C90A2722E8FC0018F24A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9022722E82F0018F24A /* LaunchFilterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1F46C90B2722E9030018F24A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9042722E8650018F24A /* LaunchFilterRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,21 +530,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C90D2722E9560018F24A /* DateFormatter.swift in Sources */,
 				1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */,
 				1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */,
+				1F46C9032722E82F0018F24A /* LaunchFilterPresenter.swift in Sources */,
+				1F46C9052722E8650018F24A /* LaunchFilterRouter.swift in Sources */,
 				1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */,
+				1F46C9072722E8C00018F24A /* UIButton+SpaceX.swift in Sources */,
 				1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */,
 				1F46C8D52722B1080018F24A /* Company.swift in Sources */,
-				1F46C88B2722A6FC0018F24A /* ViewController.swift in Sources */,
+				1F46C88B2722A6FC0018F24A /* LaunchListViewController.swift in Sources */,
 				1F46C8E72722C3CC0018F24A /* BaseViewController.swift in Sources */,
+				1F46C8FC2722E45D0018F24A /* Filter.swift in Sources */,
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
+				1F46C8FF2722E7D70018F24A /* LaunchFilterViewController.swift in Sources */,
 				1F46C8EA2722C4440018F24A /* NetworkBannerView.swift in Sources */,
+				1F46C8FA2722E4370018F24A /* Launch.swift in Sources */,
+				1F46C8F82722E3700018F24A /* LaunchService.swift in Sources */,
 				1F46C8F02722CB7A0018F24A /* Services.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
 				1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */,
 				1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */,
+				1F46C9012722E8120018F24A /* LaunchFilterInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
