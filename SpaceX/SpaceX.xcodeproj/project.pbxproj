@@ -23,6 +23,13 @@
 		1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C12722AA500018F24A /* SpaceXFont.swift */; };
 		1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C62722AC8E0018F24A /* NetworkService.swift */; };
 		1F46C8C92722AE810018F24A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C82722AE810018F24A /* Constants.swift */; };
+		1F46C8CC2722AFA70018F24A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F46C8CB2722AFA70018F24A /* Kingfisher */; };
+		1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */; };
+		1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D12722B05A0018F24A /* CompanyService.swift */; };
+		1F46C8D52722B1080018F24A /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D42722B1080018F24A /* Company.swift */; };
+		1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8DD2722B2510018F24A /* LocalizedString.swift */; };
+		1F46C8DF2722B2990018F24A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8E12722B2990018F24A /* Localizable.strings */; };
+		1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8E32722B4500018F24A /* String+Placeholders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,12 @@
 		1F46C8C12722AA500018F24A /* SpaceXFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXFont.swift; sourceTree = "<group>"; };
 		1F46C8C62722AC8E0018F24A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1F46C8C82722AE810018F24A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		1F46C8D12722B05A0018F24A /* CompanyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyService.swift; sourceTree = "<group>"; };
+		1F46C8D42722B1080018F24A /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		1F46C8DD2722B2510018F24A /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		1F46C8E02722B2990018F24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1F46C8E32722B4500018F24A /* String+Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Placeholders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C8CC2722AFA70018F24A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +127,9 @@
 		1F46C8852722A6FC0018F24A /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C8D32722B0F10018F24A /* Model */,
+				1F46C8E22722B43B0018F24A /* Extensions */,
+				1F46C8DA2722B1ED0018F24A /* Localized */,
 				1F46C8C42722AC3C0018F24A /* Services */,
 				1F46C8B62722A9D30018F24A /* Fonts */,
 				1F46C8C32722AAE70018F24A /* Core */,
@@ -167,6 +184,8 @@
 		1F46C8C42722AC3C0018F24A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C8D02722B0440018F24A /* CompanyService */,
+				1F46C8CD2722AFD30018F24A /* ReachabilityService */,
 				1F46C8C52722AC600018F24A /* NetworkService */,
 			);
 			path = Services;
@@ -178,6 +197,48 @@
 				1F46C8C62722AC8E0018F24A /* NetworkService.swift */,
 			);
 			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		1F46C8CD2722AFD30018F24A /* ReachabilityService */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */,
+			);
+			name = ReachabilityService;
+			sourceTree = "<group>";
+		};
+		1F46C8D02722B0440018F24A /* CompanyService */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8D12722B05A0018F24A /* CompanyService.swift */,
+			);
+			name = CompanyService;
+			sourceTree = "<group>";
+		};
+		1F46C8D32722B0F10018F24A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8D42722B1080018F24A /* Company.swift */,
+			);
+			name = Model;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1F46C8DA2722B1ED0018F24A /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8E12722B2990018F24A /* Localizable.strings */,
+				1F46C8DD2722B2510018F24A /* LocalizedString.swift */,
+			);
+			path = Localized;
+			sourceTree = "<group>";
+		};
+		1F46C8E22722B43B0018F24A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8E32722B4500018F24A /* String+Placeholders.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +257,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				1F46C8CB2722AFA70018F24A /* Kingfisher */,
+			);
 			productName = SpaceX;
 			productReference = 1F46C8832722A6FC0018F24A /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +332,9 @@
 				Base,
 			);
 			mainGroup = 1F46C87A2722A6FC0018F24A;
+			packageReferences = (
+				1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1F46C8842722A6FC0018F24A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +356,7 @@
 				1F46C8BE2722AA1D0018F24A /* AvenirLTStd-Book.otf in Resources */,
 				1F46C8932722A6FF0018F24A /* LaunchScreen.storyboard in Resources */,
 				1F46C8BD2722AA1D0018F24A /* AvenirLTStd-Black.otf in Resources */,
+				1F46C8DF2722B2990018F24A /* Localizable.strings in Resources */,
 				1F46C8902722A6FF0018F24A /* Assets.xcassets in Resources */,
 				1F46C8C02722AA1D0018F24A /* AvenirLTStd-Medium.otf in Resources */,
 			);
@@ -315,12 +383,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */,
 				1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */,
+				1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */,
+				1F46C8D52722B1080018F24A /* Company.swift in Sources */,
 				1F46C88B2722A6FC0018F24A /* ViewController.swift in Sources */,
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
+				1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */,
+				1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +436,14 @@
 				1F46C8922722A6FF0018F24A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1F46C8E12722B2990018F24A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F46C8E02722B2990018F24A /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -678,6 +759,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F46C8CB2722AFA70018F24A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F46C87B2722A6FC0018F24A /* Project object */;
 }
