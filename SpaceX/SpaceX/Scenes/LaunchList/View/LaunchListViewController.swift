@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LaunchListViewController.swift
 //  SpaceX
 //
 //  Created by David Beleza on 22/10/2021.
@@ -11,7 +11,7 @@ protocol LaunchListFilterOutput: AnyObject {
     func applyFilter(isFilterActive: Bool, year: String, sortOrder: Int)
 }
 
-class LaunchFilterViewController: BaseViewController {
+class LaunchListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
