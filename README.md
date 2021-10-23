@@ -44,7 +44,7 @@ The API used for this project was V4 that is documented here https://github.com/
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
 4. Apply a big improvement how error handling is being done
 5. Give loading feedback to the user (when app is fetching next launches page)
-6. Improve *Launch.Request* model (V4 is a bit painful)
+6. Improve `Launch.Request` model (V4 is a bit painful)
 7. Add persistance
 8. Image loader must be testable
 
