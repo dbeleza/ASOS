@@ -19,11 +19,11 @@
 "youtube" = "Youtube";
 "articleDetailDescription" = "Learn more about this launch:";
 "notDefined" = "n/d";
-"filterState" = "Turn filter on/off";
-"filterDescription" = "Please select the Year and the Sort type:";
-"filterNote" = "This filter will only consider the successful launches.";
-"ascendent" = "ASC";
-"descendent" = "DESC";
+"launchSuccess" = "Filter by successful launches:";
+"sortBy" = "Sort year by ascending:";
+"filterDescription" = "Please select the Year of the launch:";
 "save" = "Apply";
 "close" = "Close";
 "noResults" = "There are no launches";
+"noDetails" = "There are no details";
+"reset" = "Reset";

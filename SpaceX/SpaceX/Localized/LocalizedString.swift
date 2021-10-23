@@ -29,14 +29,14 @@ enum LocalizedString: String {
     case youtube
     case articleDetailDescription
     case notDefined
-    case filterState
+    case launchSuccess
     case filterDescription
-    case filterNote
-    case ascendent
-    case descendent
+    case sortBy
     case save
     case close
     case noResults
+    case noDetails
+    case reset
 
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "Missing String")
