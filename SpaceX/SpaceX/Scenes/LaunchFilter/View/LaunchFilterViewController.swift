@@ -19,16 +19,32 @@ final class LaunchFilterViewController: BaseViewController {
 
     private var pickerViewModel: Filter.ViewModel?
 
-    private var switchLabel: UILabel = {
+    private var successSwitchLabel: UILabel = {
         let label = UILabel()
-        label.text = LocalizedString.filterState.localized
+        label.text = LocalizedString.launchSuccess.localized
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.spaceDarkBlue
         label.font = SpaceXFont.heavy.of(size: .small)
         return label
     }()
 
-    private lazy var switcher: UISwitch = {
+    private lazy var successLaunchSwitcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.isOn = false
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        return switcher
+    }()
+
+    private var sortSwitchLabel: UILabel = {
+        let label = UILabel()
+        label.text = LocalizedString.sortBy.localized
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.spaceDarkBlue
+        label.font = SpaceXFont.heavy.of(size: .small)
+        return label
+    }()
+
+    private lazy var isAscendingSwitcher: UISwitch = {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
@@ -44,21 +60,6 @@ final class LaunchFilterViewController: BaseViewController {
         return label
     }()
 
-    private var filterNoteLabel: UILabel = {
-        let label = UILabel()
-        label.text = LocalizedString.filterNote.localized
-        label.font = SpaceXFont.medium.of(size: .extraSmall)
-        label.textColor = UIColor.spaceGray
-        label.numberOfLines = 3
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    enum PickerComponents: Int, CaseIterable {
-        case years
-        case sortOption
-    }
     private lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
         picker.delegate = self
@@ -74,6 +75,13 @@ final class LaunchFilterViewController: BaseViewController {
     private lazy var saveButton: UIButton = {
         let button = UIButton.createSpaceXButton(title: LocalizedString.save.localized)
         button.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    private lazy var resetButton: UIButton = {
+        let button = UIButton.createSpaceXButton(title: LocalizedString.reset.localized)
+        button.addTarget(self, action: #selector(didTapReset), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -103,12 +111,14 @@ final class LaunchFilterViewController: BaseViewController {
     override func setupSubviews() {
         super.setupSubviews()
 
-        view.addSubview(switchLabel)
-        view.addSubview(switcher)
+        view.addSubview(successSwitchLabel)
+        view.addSubview(successLaunchSwitcher)
+        view.addSubview(sortSwitchLabel)
+        view.addSubview(isAscendingSwitcher)
         view.addSubview(filterDescriptionLabel)
         view.addSubview(pickerView)
-        view.addSubview(filterNoteLabel)
         view.addSubview(saveButton)
+        view.addSubview(resetButton)
         view.addSubview(dismissButton)
     }
 
@@ -116,32 +126,39 @@ final class LaunchFilterViewController: BaseViewController {
         super.setupConstraints()
 
         NSLayoutConstraint.activate([
-            switchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.Margin.baseline * 5),
-            switchLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.Margin.baseline * 5),
+            successSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
+            successSwitchLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.UI.baseline * 5),
 
-            switcher.centerYAnchor.constraint(equalTo: switchLabel.centerYAnchor),
-            switcher.leftAnchor.constraint(equalTo: switchLabel.rightAnchor, constant: Constants.Margin.baseline),
+            successLaunchSwitcher.centerYAnchor.constraint(equalTo: successSwitchLabel.centerYAnchor),
+            successLaunchSwitcher.leftAnchor.constraint(equalTo: successSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
 
-            filterDescriptionLabel.topAnchor.constraint(equalTo: switcher.bottomAnchor, constant: Constants.Margin.baseline * 6),
-            filterDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Margin.baseline * 5),
-            filterDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Margin.baseline * 5),
+            sortSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
+            sortSwitchLabel.topAnchor.constraint(equalTo: successSwitchLabel.bottomAnchor, constant: Constants.UI.baseline * 4),
+
+            isAscendingSwitcher.centerYAnchor.constraint(equalTo: sortSwitchLabel.centerYAnchor),
+            isAscendingSwitcher.leftAnchor.constraint(equalTo: sortSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
+
+            filterDescriptionLabel.topAnchor.constraint(equalTo: sortSwitchLabel.bottomAnchor, constant: Constants.UI.baseline * 6),
+            filterDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.UI.baseline * 5),
+            filterDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.UI.baseline * 5),
 
             pickerView.topAnchor.constraint(equalTo: filterDescriptionLabel.bottomAnchor),
             pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pickerView.heightAnchor.constraint(equalToConstant: 200),
 
-            filterNoteLabel.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: Constants.Margin.baseline * 2),
-            filterNoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Margin.baseline * 5),
-            filterNoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Margin.baseline * 5),
-
-            saveButton.heightAnchor.constraint(equalToConstant: Constants.Margin.baseline * 4),
-            saveButton.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: -Constants.Margin.baseline * 2),
+            saveButton.heightAnchor.constraint(equalToConstant: Constants.UI.baseline * 4),
+            saveButton.bottomAnchor.constraint(equalTo: resetButton.topAnchor, constant: -Constants.UI.baseline * 2),
             saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            dismissButton.heightAnchor.constraint(equalToConstant: Constants.Margin.baseline * 4),
-            dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.Margin.baseline * 4),
+            resetButton.heightAnchor.constraint(equalToConstant: Constants.UI.baseline * 4),
+            resetButton.bottomAnchor.constraint(equalTo: dismissButton.topAnchor, constant: -Constants.UI.baseline * 4),
+            resetButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            resetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            dismissButton.heightAnchor.constraint(equalToConstant: Constants.UI.baseline * 4),
+            dismissButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.UI.baseline * 4),
             dismissButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             dismissButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
@@ -149,16 +166,19 @@ final class LaunchFilterViewController: BaseViewController {
 
     @objc private func didTapSave() {
         guard let viewModel = pickerViewModel else { return }
-        let yearRow = pickerView.selectedRow(inComponent: PickerComponents.years.rawValue)
+        let yearRow = pickerView.selectedRow(inComponent: .zero)
         let year = viewModel.years[yearRow]
 
-        let sortIndex = pickerView.selectedRow(inComponent: PickerComponents.sortOption.rawValue)
-
-        delegate?.applyFilter(isFilterActive: switcher.isOn, year: year, sortOrder: sortIndex)
+        delegate?.applyFilter(isLaunchSuccess: successLaunchSwitcher.isOn, year: year, isAscending: isAscendingSwitcher.isOn)
         router?.dismiss(viewController: self)
     }
 
     @objc private func didTapDismiss() {
+        router?.dismiss(viewController: self)
+    }
+
+    @objc private func didTapReset() {
+        delegate?.resetFilter()
         router?.dismiss(viewController: self)
     }
 }
@@ -167,39 +187,19 @@ final class LaunchFilterViewController: BaseViewController {
 extension LaunchFilterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         guard let viewModel = pickerViewModel else { return nil }
-        switch component {
-        case PickerComponents.years.rawValue:
-            return viewModel.years[row]
-
-        case PickerComponents.sortOption.rawValue:
-            guard let sortOption = Filter.SortOptions(rawValue: row) else { return nil }
-            return sortOption.string
-
-        default:
-            fatalError("Not expected to have more picker components 💩")
-        }
+        return viewModel.years[row]
     }
 }
 
 // MARK: - UIPickerViewDataSource
 extension LaunchFilterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return PickerComponents.allCases.count
+        return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         guard let viewModel = pickerViewModel else { return 0 }
-
-        switch component {
-        case PickerComponents.years.rawValue:
-            return viewModel.years.count
-
-        case PickerComponents.sortOption.rawValue:
-            return viewModel.sortOptions.count
-
-        default:
-            fatalError("Not expected to have more picker components 💩")
-        }
+        return viewModel.years.count
     }
 }
 
@@ -208,8 +208,8 @@ extension LaunchFilterViewController: LaunchFilterPresenterOutput {
     func presenter(didRetrievePickerModel viewModel: Filter.ViewModel) {
         pickerViewModel = viewModel
         pickerView.reloadAllComponents()
-        switcher.isOn = viewModel.isFilterOn
-        pickerView.selectRow(viewModel.preselectYearIndex, inComponent: PickerComponents.years.rawValue, animated: false)
-        pickerView.selectRow(viewModel.preselectSortIndex, inComponent: PickerComponents.sortOption.rawValue, animated: false)
+        successLaunchSwitcher.isOn = viewModel.isSuccess
+        isAscendingSwitcher.isOn = viewModel.isAscending
+        pickerView.selectRow(viewModel.preselectYearIndex, inComponent: .zero, animated: false)
     }
 }

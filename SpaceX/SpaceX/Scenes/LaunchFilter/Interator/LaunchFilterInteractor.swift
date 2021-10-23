@@ -24,8 +24,6 @@ final class LaunchFilterInteractorImpl: LaunchFilterInteractor {
         let yearsInt = Array(1980...2030)
         let yearsString = yearsInt.map({ String($0) })
 
-        let sortOptions = [Filter.SortOptions.asc, Filter.SortOptions.desc]
-
-        presenter.interactor(retrieve: yearsString, sortOptions: sortOptions, filterState: filterState)
+        presenter.interactor(retrieve: yearsString, filterState: filterState)
     }
 }
