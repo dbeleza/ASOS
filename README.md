@@ -5,10 +5,13 @@ Because of lack of time, in this project I did not had the opportunity to reflec
 I did not create branches (did committed everything directly in `master` and my commits were not detailed).
 
 # SpaceX
-SpaceX is a project created with Swift 5.0.
-It uses UIKit (although I really want to start working with SwiftUI).
+SpaceX is a project created with Swift 5 with UIKit.
 
-The app main propose is to show all the launches of advanced rockets and give the possibility to user access more information about them.
+The app consists of presenting a list with all the launches of advanced rockets, apply a filter date and give the possibility to user access more information about them.
+
+## Exercise note
+
+In the exercise, it was mentioned that we should show a success or failure icon depending on if the launch was succeded or not. However, in this new API (V4) I noticed that some launches were be retrieve with `null`. For this cases I've decided to show a warning icon ⚠️.
 
 # Architecture
 This projected was created with VIP architecture.
@@ -33,7 +36,7 @@ Unfortunately the UI Tests are very very basic. They need mocks, they need to be
 **NOTE**
 
 I'm sorry but I did not have time to investigate why after we run UI Tests, when we launch the app, it appears with a black background screen under the tableView. I tried to do a quick investigation and I found some people saying that this might be caused by an XCode issue.
-In order to fix this, we need to reset the simulator :(
+In order to fix this, we need to reset the simulator 😩
 
 # API
 The API used for this project was V4 that is documented here https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs
@@ -42,11 +45,10 @@ The API used for this project was V4 that is documented here https://github.com/
 1. UI
 2. Improve Network Reachability and improve integration with UI/Network actions
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
-4. Apply a big improvement how error handling is being done
-5. Give loading feedback to the user (when app is fetching next launches page)
+4. Apply a big improvement on error handling
+5. Give a loading feedback to the user (for example, when app is fetching next launches page)
 6. Improve `Launch.Request` model (V4 is a bit painful)
-7. Add persistance
-8. Image loader must be testable
+7. *Image loader* must be improved in order to be testable
 
 **I'm sure there are more improvements to do but I am here, eager to improve myself as a developer. Hope to count with your help.**
 
