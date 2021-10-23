@@ -10,6 +10,19 @@ import XCTest
 
 class SpaceXUITests: XCTestCase {
 
+    /*
+     To do UITests, we should not be dependent from network. Mock data should be used.
+
+     We could to this for example by doing something like this on our AppDelegate:
+
+     let arguments = NSProcessInfo.processInfo().arguments
+     let mock = arguments.contains("MOCKFLAG")
+     if ( mock ) {
+        // Mock Engine NetworkService
+     }
+
+     */
+
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
@@ -20,18 +33,6 @@ class SpaceXUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        /*
-         To do UITests, we should not be dependent from network. Mock data should be used.
-
-         We could to this for example by doing something like this on our AppDelegate:
-
-         let arguments = NSProcessInfo.processInfo().arguments
-         let mock = arguments.contains("MOCKFLAG")
-         if ( mock ) {
-            // Mock Engine NetworkService
-         }
-
-         */
         // This is the most basic UITest
         XCTAssertTrue(app.activityIndicators[Accessibility.Screen.Launch.spinner].exists)
         XCTAssertTrue(app.navigationBars.buttons[Accessibility.Screen.Launch.filterButton].exists)
