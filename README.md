@@ -40,7 +40,7 @@ The API used for this project was V4 that is documented here https://github.com/
 
 # Improvements
 1. UI
-2. Improve Network Reachability and improve integration with UI actions
+2. Improve Network Reachability and improve integration with UI/Network actions
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
 4. Apply a big improvement how error handling is being done
 5. Give loading feedback to the user (when app is fetching next launches page)
