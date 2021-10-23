@@ -9,49 +9,64 @@ import Foundation
 
 public protocol NetworkService: AnyObject {
     typealias Response = (data: Data?, urlResponse: URLResponse?, error: Error?)
-    func get(scheme: String, host: String, path: String, queryItems: [URLQueryItem]?) -> URLRequest
-    func post(scheme: String, host: String, path: String, body: Data) -> URLRequest
-    func request(urlRequest: URLRequest, completion: @escaping (Response) -> Void)
+    func execute(request: Request, completion: @escaping (Response) -> Void)
 }
 
 final class NetworkServiceImpl: NetworkService {
-    let session: URLSession
+    enum NetworkError: Error {
+        case failedBuildRequest
+    }
+    private let session: URLSession
+    private let environment: Environment
 
-    init(session: URLSession) {
+    init(environment: Environment, session: URLSession) {
         self.session = session
+        self.environment = environment
     }
 
-    func get(scheme: String, host: String, path: String, queryItems: [URLQueryItem]?) -> URLRequest {
-        var components = URLComponents()
-        components.scheme = scheme
-        components.host = host
-        components.path = path
-        components.queryItems = queryItems
-
-        guard let url = components.url else { fatalError("URL not well constructed 💩") }
-
-        return URLRequest(url: url)
+    func execute(request: Request, completion: @escaping (Response) -> Void) {
+        do {
+            let request = try buildUrlRequest(from: request)
+            session.dataTask(with: request) { data, response, error in
+                completion((data, response, error))
+            }.resume()
+        } catch {
+            completion((data: nil, urlResponse: nil, error: NetworkError.failedBuildRequest))
+        }
     }
 
-    func post(scheme: String, host: String, path: String, body: Data) -> URLRequest {
-        var components = URLComponents()
-        components.scheme = scheme
-        components.host = host
-        components.path = path
+    func buildUrlRequest(from request: Request) throws -> URLRequest {
+        guard let baseUrl = URL(string: environment.host) else { throw NetworkError.failedBuildRequest }
 
-        guard let url = components.url else { fatalError("URL not well constructed 💩") }
+        let fullUrl = baseUrl.appendingPathComponent(request.path)
+        var urlRequest = URLRequest(url: fullUrl)
 
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = body
+        // Set the HTTP method
+        urlRequest.httpMethod = request.method.rawValue
 
-        return request
-    }
+        // Set the headers
+        request.headers?.forEach { urlRequest.addValue($0.value.rawValue, forHTTPHeaderField: $0.key.rawValue) }
 
-    func request(urlRequest: URLRequest, completion: @escaping (Response) -> Void) {
-        session.dataTask(with: urlRequest) { data, response, error in
-            completion((data, response, error))
-        }.resume()
+        // Set the parameters
+        switch request.parameters {
+        case .body(let data):
+            if let data = data {
+                urlRequest.httpBody = data
+            }
+
+        case .url(let params):
+            if let params = params {
+                let queryParams: [URLQueryItem] = params.map { URLQueryItem(name: $0.key, value: $0.value) }
+
+                guard var components = URLComponents(string: fullUrl.absoluteString) else { throw NetworkError.failedBuildRequest }
+
+                components.queryItems = queryParams
+                urlRequest.url = components.url
+            }
+        case .none:
+            break
+        }
+
+        return urlRequest
     }
 }

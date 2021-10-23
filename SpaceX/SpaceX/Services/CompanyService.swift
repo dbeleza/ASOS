@@ -26,12 +26,8 @@ final class CompanyServiceImpl: CompanyService {
 
     func fetchCompany(completion: @escaping (Result<Company.Response, Error>) -> Void) {
         guard let engine = engine else { return }
-        let request = engine.networkService.get(scheme: Constants.API.scheme,
-                                                host: Constants.API.host,
-                                                path: "/v4/company",
-                                                queryItems: nil)
 
-        engine.networkService.request(urlRequest: request) { response in
+        engine.networkService.execute(request: SpaceXRequest.companyDetails) { response in
             guard let data = response.data, response.error == nil else {
                 completion(.failure(CompanyServiceError.error))
                 return
