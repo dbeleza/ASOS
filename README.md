@@ -46,11 +46,10 @@ The API used for this project was V4 that is documented here https://github.com/
 2. Improve Network Reachability and improve integration with UI/Network actions
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
 4. Apply a big improvement on error handling
-5. Give a loading feedback to the user (for example, when app is fetching next launches page)
+5. Give a loading feedback to the user (one example is when app is fetching next launches page)
 6. Improve `Launch.Request` model (V4 is a bit painful)
 7. *Image loader* must be improved in order to be testable
-
-**I'm sure there are more improvements to do but I am here, eager to improve myself as a developer. Hope to count with your help.**
+(I'm sure there are more improvements to do but in my opinion, these are the most notorios ones)
 
 # QA tests
 For manual tests, I've used the XCode iPhones 12 and 8 (iOS 15.0) from simulator.
