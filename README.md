@@ -1,6 +1,6 @@
 # ASOS Exercise
 
-# Just a brief introduction
+# Just a brief note
 Because of lack of time, in this project I did not had the opportunity to reflect what is my normal day as a developer.
 I did not create branches (did committed everything directly in `master` and my commits were not detailed).
 
