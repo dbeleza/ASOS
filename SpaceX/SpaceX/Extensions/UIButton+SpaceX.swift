@@ -13,7 +13,7 @@ extension UIButton {
         let button = UIButton()
         button.backgroundColor = UIColor.spaceDarkBlue
         button.setTitle(title, for: .normal)
-        button.layer.cornerRadius = Constants.Margin.baseline * 2
+        button.layer.cornerRadius = Constants.UI.baseline * 2
         return button
     }
 }
