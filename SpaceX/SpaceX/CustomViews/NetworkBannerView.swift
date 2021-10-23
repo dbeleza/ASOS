@@ -37,7 +37,7 @@ final class NetworkBannerView: UIView {
         NSLayoutConstraint.activate([
             internetLabel.leftAnchor.constraint(equalTo: leftAnchor),
             internetLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            internetLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.Margin.baseline),
+            internetLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.UI.baseline),
         ])
     }
 }
