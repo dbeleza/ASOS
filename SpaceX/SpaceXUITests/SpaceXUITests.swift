@@ -6,36 +6,56 @@
 //
 
 import XCTest
+@testable import SpaceX
 
 class SpaceXUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    override func tearDownWithError() throws { }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testBasicUI() throws {
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        /*
+         To do UITests, we should not be dependent from network. Mock data should be used.
+
+         We could to this for example by doing something like this on our AppDelegate:
+
+         let arguments = NSProcessInfo.processInfo().arguments
+         let mock = arguments.contains("MOCKFLAG")
+         if ( mock ) {
+            // Mock Engine NetworkService
+         }
+
+         */
+        // This is the most basic UITest
+        XCTAssertTrue(app.activityIndicators[Accessibility.Screen.Launch.spinner].exists)
+        XCTAssertTrue(app.navigationBars.buttons[Accessibility.Screen.Launch.filterButton].exists)
+        waitForElementToAppear(element: app.tables[Accessibility.Screen.Launch.tableView])
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
+    func testFilterUI() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.navigationBars.buttons[Accessibility.Screen.Launch.filterButton].tap()
+        XCTAssertTrue(app.pickers[Accessibility.Screen.Filter.pickerView].exists)
+    }
+
+    private func waitForElementToAppear(element: XCUIElement, timeout: TimeInterval = 5,  file: String = #file, line: UInt = #line) {
+        let existsPredicate = NSPredicate(format: "exists == true")
+
+        expectation(for: existsPredicate,
+                       evaluatedWith: element, handler: nil)
+
+        waitForExpectations(timeout: timeout) { (error) -> Void in
+            if (error != nil) {
+                let message = "Failed to find \(element) after \(timeout) seconds."
+                let issue = XCTIssue(type: .assertionFailure, compactDescription: message)
+                self.record(issue)
             }
         }
     }

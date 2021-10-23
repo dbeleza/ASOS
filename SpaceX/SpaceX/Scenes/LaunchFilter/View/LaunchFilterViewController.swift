@@ -69,6 +69,7 @@ final class LaunchFilterViewController: BaseViewController {
         picker.autoresizingMask = .flexibleWidth
         picker.contentMode = .center
         picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.accessibilityIdentifier = Accessibility.Screen.Filter.pickerView
         return picker
     }()
 

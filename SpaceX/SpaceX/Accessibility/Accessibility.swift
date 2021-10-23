@@ -14,5 +14,9 @@ struct Accessibility {
             static let tableView = "launch_screen_table_view"
             static let spinner = "launch_screen_spinner"
         }
+
+        struct Filter {
+            static let pickerView = "launch_list_filter_picker_view"
+        }
     }
 }

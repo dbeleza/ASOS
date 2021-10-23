@@ -76,6 +76,10 @@
 		1F46C965272400410018F24A /* LaunchServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C964272400410018F24A /* LaunchServiceStub.swift */; };
 		1F46C967272401330018F24A /* CompanyServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C966272401330018F24A /* CompanyServiceStub.swift */; };
 		1F46C9692724014E0018F24A /* EnvironmentStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9682724014E0018F24A /* EnvironmentStub.swift */; };
+		1F46C96C272408A50018F24A /* EngineMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C96B272408A50018F24A /* EngineMock.swift */; };
+		1F46C96E272408EA0018F24A /* LaunchListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C96D272408EA0018F24A /* LaunchListPresenterMock.swift */; };
+		1F46C9702724090C0018F24A /* LaunchListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C96F2724090C0018F24A /* LaunchListViewControllerMock.swift */; };
+		1F46C972272409270018F24A /* LaunchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C971272409270018F24A /* LaunchServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +172,10 @@
 		1F46C964272400410018F24A /* LaunchServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceStub.swift; sourceTree = "<group>"; };
 		1F46C966272401330018F24A /* CompanyServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyServiceStub.swift; sourceTree = "<group>"; };
 		1F46C9682724014E0018F24A /* EnvironmentStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentStub.swift; sourceTree = "<group>"; };
+		1F46C96B272408A50018F24A /* EngineMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineMock.swift; sourceTree = "<group>"; };
+		1F46C96D272408EA0018F24A /* LaunchListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListPresenterMock.swift; sourceTree = "<group>"; };
+		1F46C96F2724090C0018F24A /* LaunchListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewControllerMock.swift; sourceTree = "<group>"; };
+		1F46C971272409270018F24A /* LaunchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,7 @@
 				1F46C9522723FF730018F24A /* LaunchListPresenterTests.swift */,
 				1F46C9542723FF9D0018F24A /* NetworkServiceTests.swift */,
 				1F46C95F2723FFF60018F24A /* Stubs */,
+				1F46C96A2724088C0018F24A /* Mock */,
 				1F46C9562723FFB10018F24A /* Resources */,
 			);
 			path = SpaceXTests;
@@ -554,6 +563,17 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
+		1F46C96A2724088C0018F24A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C96B272408A50018F24A /* EngineMock.swift */,
+				1F46C96D272408EA0018F24A /* LaunchListPresenterMock.swift */,
+				1F46C96F2724090C0018F24A /* LaunchListViewControllerMock.swift */,
+				1F46C971272409270018F24A /* LaunchServiceMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -750,15 +770,19 @@
 				1F46C89E2722A7000018F24A /* LaunchServiceTests.swift in Sources */,
 				1F46C9552723FF9D0018F24A /* NetworkServiceTests.swift in Sources */,
 				1F46C94B2723FECA0018F24A /* IntDateTest.swift in Sources */,
+				1F46C96E272408EA0018F24A /* LaunchListPresenterMock.swift in Sources */,
+				1F46C9702724090C0018F24A /* LaunchListViewControllerMock.swift in Sources */,
 				1F46C94D2723FEE60018F24A /* StringPlaceholdersTest.swift in Sources */,
 				1F46C9612724000B0018F24A /* NetworkServiceStub.swift in Sources */,
 				1F46C967272401330018F24A /* CompanyServiceStub.swift in Sources */,
+				1F46C972272409270018F24A /* LaunchServiceMock.swift in Sources */,
 				1F46C963272400260018F24A /* ReachabilityServiceStub.swift in Sources */,
 				1F46C9692724014E0018F24A /* EnvironmentStub.swift in Sources */,
 				1F46C965272400410018F24A /* LaunchServiceStub.swift in Sources */,
 				1F46C9532723FF740018F24A /* LaunchListPresenterTests.swift in Sources */,
 				1F46C94F2723FF360018F24A /* CompanyServiceTests.swift in Sources */,
 				1F46C9512723FF570018F24A /* LaunchListInteractorTests.swift in Sources */,
+				1F46C96C272408A50018F24A /* EngineMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
