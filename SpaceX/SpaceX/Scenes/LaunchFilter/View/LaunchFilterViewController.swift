@@ -17,6 +17,60 @@ final class LaunchFilterViewController: BaseViewController {
     var interactor: LaunchFilterInteractor?
     var router: LaunchFilterRouter?
 
+    private enum LaunchType: Int {
+        case failure
+        case success
+
+        init(rawValue: Int) {
+            switch rawValue {
+            case Self.failure.rawValue:
+                self = .failure
+
+            case Self.success.rawValue:
+                self = .success
+
+            default:
+                self = .success
+            }
+        }
+
+        var text: String {
+            switch self {
+            case .failure:
+                return LocalizedString.filterFailure.localized
+            case .success:
+                return LocalizedString.filterSuccess.localized
+            }
+        }
+    }
+
+    private enum YearSort: Int {
+        case descending
+        case ascending
+
+        init(rawValue: Int) {
+            switch rawValue {
+            case Self.descending.rawValue:
+                self = .descending
+
+            case Self.ascending.rawValue:
+                self = .ascending
+
+            default:
+                self = .ascending
+            }
+        }
+
+        var text: String {
+            switch self {
+            case .descending:
+                return LocalizedString.filterDescending.localized
+            case .ascending:
+                return LocalizedString.filterAscending.localized
+            }
+        }
+    }
+
     private var pickerViewModel: Filter.ViewModel?
 
     private var successSwitchLabel: UILabel = {
@@ -28,9 +82,8 @@ final class LaunchFilterViewController: BaseViewController {
         return label
     }()
 
-    private lazy var successLaunchSwitcher: UISwitch = {
-        let switcher = UISwitch()
-        switcher.isOn = false
+    private lazy var launchTypeSegmentedControl: UISegmentedControl = {
+        let switcher = UISegmentedControl(items: [LaunchType.failure.text, LaunchType.success.text])
         switcher.translatesAutoresizingMaskIntoConstraints = false
         return switcher
     }()
@@ -44,9 +97,8 @@ final class LaunchFilterViewController: BaseViewController {
         return label
     }()
 
-    private lazy var isAscendingSwitcher: UISwitch = {
-        let switcher = UISwitch()
-        switcher.isOn = false
+    private lazy var sortYearSegmentedControl: UISegmentedControl = {
+        let switcher = UISegmentedControl(items: [YearSort.descending.text, YearSort.ascending.text])
         switcher.translatesAutoresizingMaskIntoConstraints = false
         return switcher
     }()
@@ -113,9 +165,9 @@ final class LaunchFilterViewController: BaseViewController {
         super.setupSubviews()
 
         view.addSubview(successSwitchLabel)
-        view.addSubview(successLaunchSwitcher)
+        view.addSubview(launchTypeSegmentedControl)
         view.addSubview(sortSwitchLabel)
-        view.addSubview(isAscendingSwitcher)
+        view.addSubview(sortYearSegmentedControl)
         view.addSubview(filterDescriptionLabel)
         view.addSubview(pickerView)
         view.addSubview(saveButton)
@@ -127,19 +179,7 @@ final class LaunchFilterViewController: BaseViewController {
         super.setupConstraints()
 
         NSLayoutConstraint.activate([
-            successSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
-            successSwitchLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.UI.baseline * 5),
-
-            successLaunchSwitcher.centerYAnchor.constraint(equalTo: successSwitchLabel.centerYAnchor),
-            successLaunchSwitcher.leftAnchor.constraint(equalTo: successSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
-
-            sortSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
-            sortSwitchLabel.topAnchor.constraint(equalTo: successSwitchLabel.bottomAnchor, constant: Constants.UI.baseline * 4),
-
-            isAscendingSwitcher.centerYAnchor.constraint(equalTo: sortSwitchLabel.centerYAnchor),
-            isAscendingSwitcher.leftAnchor.constraint(equalTo: sortSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
-
-            filterDescriptionLabel.topAnchor.constraint(equalTo: sortSwitchLabel.bottomAnchor, constant: Constants.UI.baseline * 6),
+            filterDescriptionLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.UI.baseline * 5),
             filterDescriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.UI.baseline * 5),
             filterDescriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.UI.baseline * 5),
 
@@ -147,6 +187,18 @@ final class LaunchFilterViewController: BaseViewController {
             pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pickerView.heightAnchor.constraint(equalToConstant: 200),
+
+            successSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
+            successSwitchLabel.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: Constants.UI.baseline * 3),
+
+            launchTypeSegmentedControl.centerYAnchor.constraint(equalTo: successSwitchLabel.centerYAnchor),
+            launchTypeSegmentedControl.leftAnchor.constraint(equalTo: successSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
+
+            sortSwitchLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.UI.baseline * 5),
+            sortSwitchLabel.topAnchor.constraint(equalTo: successSwitchLabel.bottomAnchor, constant: Constants.UI.baseline * 4),
+
+            sortYearSegmentedControl.centerYAnchor.constraint(equalTo: sortSwitchLabel.centerYAnchor),
+            sortYearSegmentedControl.leftAnchor.constraint(equalTo: sortSwitchLabel.rightAnchor, constant: Constants.UI.baseline),
 
             saveButton.heightAnchor.constraint(equalToConstant: Constants.UI.baseline * 4),
             saveButton.bottomAnchor.constraint(equalTo: resetButton.topAnchor, constant: -Constants.UI.baseline * 2),
@@ -169,8 +221,10 @@ final class LaunchFilterViewController: BaseViewController {
         guard let viewModel = pickerViewModel else { return }
         let yearRow = pickerView.selectedRow(inComponent: .zero)
         let year = viewModel.years[yearRow]
+        let isSuccessLaunch = LaunchType(rawValue: launchTypeSegmentedControl.selectedSegmentIndex) == .success
+        let isAscending = YearSort(rawValue: sortYearSegmentedControl.selectedSegmentIndex) == .ascending
 
-        delegate?.applyFilter(isLaunchSuccess: successLaunchSwitcher.isOn, year: year, isAscending: isAscendingSwitcher.isOn)
+        delegate?.applyFilter(isLaunchSuccess: isSuccessLaunch, year: year, isAscending: isAscending)
         router?.dismiss(viewController: self)
     }
 
@@ -209,8 +263,8 @@ extension LaunchFilterViewController: LaunchFilterPresenterOutput {
     func presenter(didRetrievePickerModel viewModel: Filter.ViewModel) {
         pickerViewModel = viewModel
         pickerView.reloadAllComponents()
-        successLaunchSwitcher.isOn = viewModel.isSuccess
-        isAscendingSwitcher.isOn = viewModel.isAscending
+        launchTypeSegmentedControl.selectedSegmentIndex = viewModel.isSuccess ? LaunchType.success.rawValue : LaunchType.failure.rawValue
+        sortYearSegmentedControl.selectedSegmentIndex = viewModel.isAscending ? YearSort.ascending.rawValue : YearSort.descending.rawValue
         pickerView.selectRow(viewModel.preselectYearIndex, inComponent: .zero, animated: false)
     }
 }

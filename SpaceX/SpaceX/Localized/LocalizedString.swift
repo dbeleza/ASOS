@@ -37,6 +37,10 @@ enum LocalizedString: String {
     case noResults
     case noDetails
     case reset
+    case filterSuccess
+    case filterFailure
+    case filterAscending
+    case filterDescending
 
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "Missing String")

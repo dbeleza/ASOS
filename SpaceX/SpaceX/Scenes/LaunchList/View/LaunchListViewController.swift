@@ -114,6 +114,7 @@ final class LaunchListViewController: BaseViewController {
     }
 
     private func setupNavigationBar() {
+        navigationItem.title = ""
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString.sort.localized, style: .plain, target: self, action: #selector(didTapFilter))
         navigationItem.rightBarButtonItem?.accessibilityIdentifier = Accessibility.Screen.Launch.filterButton
 

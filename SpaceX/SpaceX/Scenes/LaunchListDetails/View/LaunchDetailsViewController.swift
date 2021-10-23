@@ -86,7 +86,15 @@ final class LaunchDetailsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationController()
         interactor?.viewDidLoad()
+    }
+
+    private func setupNavigationController() {
+        let yourBackImage = UIImage(systemName: "chevron.left.circle.fill")
+        navigationController?.navigationBar.backIndicatorImage = yourBackImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        navigationController?.navigationBar.tintColor = UIColor.spaceGray
     }
 
     override func setupSubviews() {
