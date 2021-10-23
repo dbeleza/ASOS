@@ -32,8 +32,8 @@ Unfortunately the UI Tests are very very basic. They need mocks, they need to be
 
 **NOTE**
 
-I'm sorry but I did not have time to investigate why after we run UI Tests, when we launch the app, it shows with a background black screen. I tried to do a quick investigation and there are people saying that this might be caused by an XCode issue.
-In order to fix this, I needed to reset my simulator. :(
+I'm sorry but I did not have time to investigate why after we run UI Tests, when we launch the app, it appears with a black background screen under the tableView. I tried to do a quick investigation and I found some people saying that this might be caused by an XCode issue.
+In order to fix this, we need to reset the simulator :(
 
 # API
 The API used for this project was V4 that is documented here https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs
