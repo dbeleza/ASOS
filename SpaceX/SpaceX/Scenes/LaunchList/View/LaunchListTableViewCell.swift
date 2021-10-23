@@ -94,7 +94,7 @@ final class LaunchListTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.isHidden = true
+        imageView.tintColor = UIColor.spaceYellow
         return imageView
     }()
 
@@ -177,14 +177,16 @@ final class LaunchListTableViewCell: UITableViewCell {
         rocketLabel.text = "\(viewModel.rocket.name) / \(viewModel.rocket.type)"
         daysTitleLabel.text = viewModel.launchDaysTitle
         daysLabel.text = viewModel.launchDays != nil ? String(viewModel.launchDays!) : LocalizedString.notDefined.localized
-        guard let launchSuccess = viewModel.launchSuccess else { return }
-        launchSuccessImageView.image = launchSuccess ? UIImage(named: "checkmark") : UIImage(named: "redCross")
+        if let launchSuccess = viewModel.launchSuccess {
+            launchSuccessImageView.image = launchSuccess ? UIImage(named: "checkmark") : UIImage(named: "redCross")
+        } else {
+            launchSuccessImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
+        }
         launchSuccessImageView.isHidden = false
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        launchSuccessImageView.isHidden = true
         imageLoaderTask?.cancel()
         thumbnailImageView.image = UIImage(named: "noImage")
     }

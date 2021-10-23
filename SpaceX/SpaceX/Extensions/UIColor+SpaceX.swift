@@ -14,4 +14,5 @@ extension UIColor {
     static let spaceLightGray = UIColor(named: "spaceLightGray")
     static let spaceWhite = UIColor(named: "spaceWhite")
     static let spaceRed = UIColor(named: "spaceRed")
+    static let spaceYellow = UIColor(named: "spaceYellow")
 }
