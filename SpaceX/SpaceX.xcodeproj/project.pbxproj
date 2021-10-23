@@ -23,7 +23,6 @@
 		1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C12722AA500018F24A /* SpaceXFont.swift */; };
 		1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C62722AC8E0018F24A /* NetworkService.swift */; };
 		1F46C8C92722AE810018F24A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C82722AE810018F24A /* Constants.swift */; };
-		1F46C8CC2722AFA70018F24A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F46C8CB2722AFA70018F24A /* Kingfisher */; };
 		1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */; };
 		1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D12722B05A0018F24A /* CompanyService.swift */; };
 		1F46C8D52722B1080018F24A /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D42722B1080018F24A /* Company.swift */; };
@@ -45,6 +44,17 @@
 		1F46C9072722E8C00018F24A /* UIButton+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9062722E8C00018F24A /* UIButton+SpaceX.swift */; };
 		1F46C90D2722E9560018F24A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C90C2722E9560018F24A /* DateFormatter.swift */; };
 		1F46C9102722ED610018F24A /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C90F2722ED610018F24A /* Engine.swift */; };
+		1F46C9242723F7AA0018F24A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9232723F7AA0018F24A /* Environment.swift */; };
+		1F46C9262723F8870018F24A /* LaunchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9252723F8870018F24A /* LaunchConfigurator.swift */; };
+		1F46C9282723F8EA0018F24A /* LaunchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9272723F8EA0018F24A /* LaunchListTableViewCell.swift */; };
+		1F46C92A2723F9110018F24A /* LaunchCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9292723F9110018F24A /* LaunchCompanyTableViewCell.swift */; };
+		1F46C92C2723F9360018F24A /* LaunchListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C92B2723F9360018F24A /* LaunchListInteractor.swift */; };
+		1F46C92E2723F95A0018F24A /* LaunchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C92D2723F95A0018F24A /* LaunchListPresenter.swift */; };
+		1F46C9302723F9970018F24A /* LaunchListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C92F2723F9970018F24A /* LaunchListRouter.swift */; };
+		1F46C9372723FA230018F24A /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9362723FA230018F24A /* LaunchDetailsViewController.swift */; };
+		1F46C9392723FA410018F24A /* LaunchDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9382723FA410018F24A /* LaunchDetailsInteractor.swift */; };
+		1F46C93B2723FA5D0018F24A /* LaunchDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C93A2723FA5D0018F24A /* LaunchDetailsPresenter.swift */; };
+		1F46C93D2723FA850018F24A /* LaunchDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C93C2723FA850018F24A /* LaunchDetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +116,17 @@
 		1F46C9062722E8C00018F24A /* UIButton+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+SpaceX.swift"; sourceTree = "<group>"; };
 		1F46C90C2722E9560018F24A /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		1F46C90F2722ED610018F24A /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		1F46C9232723F7AA0018F24A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		1F46C9252723F8870018F24A /* LaunchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfigurator.swift; sourceTree = "<group>"; };
+		1F46C9272723F8EA0018F24A /* LaunchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListTableViewCell.swift; sourceTree = "<group>"; };
+		1F46C9292723F9110018F24A /* LaunchCompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCompanyTableViewCell.swift; sourceTree = "<group>"; };
+		1F46C92B2723F9360018F24A /* LaunchListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListInteractor.swift; sourceTree = "<group>"; };
+		1F46C92D2723F95A0018F24A /* LaunchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListPresenter.swift; sourceTree = "<group>"; };
+		1F46C92F2723F9970018F24A /* LaunchListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListRouter.swift; sourceTree = "<group>"; };
+		1F46C9362723FA230018F24A /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
+		1F46C9382723FA410018F24A /* LaunchDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsInteractor.swift; sourceTree = "<group>"; };
+		1F46C93A2723FA5D0018F24A /* LaunchDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsPresenter.swift; sourceTree = "<group>"; };
+		1F46C93C2723FA850018F24A /* LaunchDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F46C8CC2722AFA70018F24A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +229,7 @@
 			children = (
 				1F46C8862722A6FC0018F24A /* AppDelegate.swift */,
 				1F46C8882722A6FC0018F24A /* SceneDelegate.swift */,
+				1F46C9232723F7AA0018F24A /* Environment.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -287,6 +308,7 @@
 				1F46C8E62722C3CC0018F24A /* BaseViewController.swift */,
 				1F46C90E2722ED070018F24A /* Configurator */,
 				1F46C8F12722E2A30018F24A /* LaunchList */,
+				1F46C9312723F9BD0018F24A /* LaunchListDetails */,
 				1F46C8FD2722E7B70018F24A /* LaunchFilter */,
 			);
 			path = Scenes;
@@ -303,10 +325,10 @@
 		1F46C8F12722E2A30018F24A /* LaunchList */ = {
 			isa = PBXGroup;
 			children = (
-				1F46C8F52722E2C80018F24A /* Router */,
-				1F46C8F42722E2BF0018F24A /* Presenter */,
-				1F46C8F32722E2B50018F24A /* Interator */,
 				1F46C8F22722E2AB0018F24A /* View */,
+				1F46C8F32722E2B50018F24A /* Interator */,
+				1F46C8F42722E2BF0018F24A /* Presenter */,
+				1F46C8F52722E2C80018F24A /* Router */,
 			);
 			path = LaunchList;
 			sourceTree = "<group>";
@@ -315,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				1F46C88A2722A6FC0018F24A /* LaunchListViewController.swift */,
+				1F46C9272723F8EA0018F24A /* LaunchListTableViewCell.swift */,
+				1F46C9292723F9110018F24A /* LaunchCompanyTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +346,7 @@
 		1F46C8F32722E2B50018F24A /* Interator */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C92B2723F9360018F24A /* LaunchListInteractor.swift */,
 			);
 			path = Interator;
 			sourceTree = "<group>";
@@ -329,6 +354,7 @@
 		1F46C8F42722E2BF0018F24A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C92D2723F95A0018F24A /* LaunchListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -336,6 +362,7 @@
 		1F46C8F52722E2C80018F24A /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C92F2723F9970018F24A /* LaunchListRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -394,8 +421,52 @@
 		1F46C90E2722ED070018F24A /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				1F46C9252723F8870018F24A /* LaunchConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		1F46C9312723F9BD0018F24A /* LaunchListDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9322723F9D10018F24A /* View */,
+				1F46C9332723F9E20018F24A /* Interactor */,
+				1F46C9342723F9F50018F24A /* Presenter */,
+				1F46C9352723F9FD0018F24A /* Router */,
+			);
+			path = LaunchListDetails;
+			sourceTree = "<group>";
+		};
+		1F46C9322723F9D10018F24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9362723FA230018F24A /* LaunchDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F46C9332723F9E20018F24A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C9382723FA410018F24A /* LaunchDetailsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1F46C9342723F9F50018F24A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C93A2723FA5D0018F24A /* LaunchDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1F46C9352723F9FD0018F24A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C93C2723FA850018F24A /* LaunchDetailsRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +486,6 @@
 			);
 			name = SpaceX;
 			packageProductDependencies = (
-				1F46C8CB2722AFA70018F24A /* Kingfisher */,
 			);
 			productName = SpaceX;
 			productReference = 1F46C8832722A6FC0018F24A /* SpaceX.app */;
@@ -490,7 +560,6 @@
 			);
 			mainGroup = 1F46C87A2722A6FC0018F24A;
 			packageReferences = (
-				1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1F46C8842722A6FC0018F24A /* Products */;
 			projectDirPath = "";
@@ -541,6 +610,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F46C92A2723F9110018F24A /* LaunchCompanyTableViewCell.swift in Sources */,
+				1F46C9262723F8870018F24A /* LaunchConfigurator.swift in Sources */,
 				1F46C90D2722E9560018F24A /* DateFormatter.swift in Sources */,
 				1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */,
 				1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */,
@@ -548,20 +619,29 @@
 				1F46C9052722E8650018F24A /* LaunchFilterRouter.swift in Sources */,
 				1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */,
 				1F46C9072722E8C00018F24A /* UIButton+SpaceX.swift in Sources */,
+				1F46C9302723F9970018F24A /* LaunchListRouter.swift in Sources */,
+				1F46C92C2723F9360018F24A /* LaunchListInteractor.swift in Sources */,
 				1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */,
 				1F46C8D52722B1080018F24A /* Company.swift in Sources */,
 				1F46C88B2722A6FC0018F24A /* LaunchListViewController.swift in Sources */,
 				1F46C8E72722C3CC0018F24A /* BaseViewController.swift in Sources */,
 				1F46C8FC2722E45D0018F24A /* Filter.swift in Sources */,
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
+				1F46C92E2723F95A0018F24A /* LaunchListPresenter.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8FF2722E7D70018F24A /* LaunchFilterViewController.swift in Sources */,
 				1F46C8EA2722C4440018F24A /* NetworkBannerView.swift in Sources */,
 				1F46C8FA2722E4370018F24A /* Launch.swift in Sources */,
+				1F46C9372723FA230018F24A /* LaunchDetailsViewController.swift in Sources */,
 				1F46C8F82722E3700018F24A /* LaunchService.swift in Sources */,
+				1F46C9392723FA410018F24A /* LaunchDetailsInteractor.swift in Sources */,
 				1F46C8F02722CB7A0018F24A /* Services.swift in Sources */,
+				1F46C93B2723FA5D0018F24A /* LaunchDetailsPresenter.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
+				1F46C9282723F8EA0018F24A /* LaunchListTableViewCell.swift in Sources */,
+				1F46C93D2723FA850018F24A /* LaunchDetailsRouter.swift in Sources */,
+				1F46C9242723F7AA0018F24A /* Environment.swift in Sources */,
 				1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */,
 				1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */,
 				1F46C9012722E8120018F24A /* LaunchFilterInteractor.swift in Sources */,
@@ -746,7 +826,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75E66HR8AH;
 				GENERATE_INFOPLIST_FILE = YES;
-				Host = api.spacexdata.com;
+				Host = "https://api.spacexdata.com";
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -775,7 +855,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75E66HR8AH;
 				GENERATE_INFOPLIST_FILE = YES;
-				Host = api.spacexdata.com;
+				Host = "https://api.spacexdata.com";
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -931,25 +1011,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1F46C8CB2722AFA70018F24A /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1F46C8CA2722AFA70018F24A /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F46C87B2722A6FC0018F24A /* Project object */;
 }
