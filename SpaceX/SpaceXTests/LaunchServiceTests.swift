@@ -32,10 +32,13 @@ class LaunchServiceTests: XCTestCase {
         networkService.response = (data: jsonData, urlResponse: urlResponse, error: nil)
 
         var result: Result<Launch.ListResponse, Error>?
+        let expectation = self.expectation(description: "testLaunchSuccess_Response")
         sut.fetchLaunches(limit: 50, offset: 0, filter: nil) { response in
             result = response
+            expectation.fulfill()
         }
 
+        wait(for: [expectation], timeout: 0.5)
         XCTAssertNotNil(result)
 
         guard case .success(let value) = result else {
@@ -57,10 +60,13 @@ class LaunchServiceTests: XCTestCase {
         networkService.response = (data: jsonData, urlResponse: urlResponse, error: nil)
 
         var result: Result<Launch.ListResponse, Error>?
+        let expectation = self.expectation(description: "fetchLaunches")
         sut.fetchLaunches(limit: 50, offset: 0, filter: nil) { response in
             result = response
+            expectation.fulfill()
         }
 
+        wait(for: [expectation], timeout: 0.5)
         XCTAssertNotNil(result)
 
         guard case .failure(let error) = result else {
@@ -81,10 +87,13 @@ class LaunchServiceTests: XCTestCase {
         networkService.response = (data: nil, urlResponse: urlResponse, error: error)
 
         var result: Result<Launch.ListResponse, Error>?
+        let expectation = self.expectation(description: "testLaunchErrorResponse")
         sut.fetchLaunches(limit: 50, offset: 0, filter: nil) { response in
             result = response
+            expectation.fulfill()
         }
 
+        wait(for: [expectation], timeout: 0.5)
         XCTAssertNotNil(result)
 
         guard case .failure(let error) = result else {
