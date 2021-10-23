@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Mark: - Response
 public struct Launch {
     public struct ListResponse: Codable, Equatable {
         public struct Response: Codable, Equatable {
@@ -92,7 +93,9 @@ public struct Launch {
 // MARK: - Request
 extension Launch {
     public struct Request: Encodable {
+
         public struct Query: Encodable {
+
             public struct DateRange: Encodable {
                 public enum CodingKeys: String, CodingKey {
                     case start = "$gte"
@@ -105,7 +108,13 @@ extension Launch {
                     self.end = "\(year)-12-31T23:59:59.000Z"
                 }
             }
-            let date_utc: DateRange?
+
+            public enum CodingKeys: String, CodingKey {
+                case dateUtc = "date_utc"
+                case success
+            }
+
+            let dateUtc: DateRange?
             let success: Bool?
         }
 
@@ -114,18 +123,75 @@ extension Launch {
                 var path = "rocket"
                 var select = ["name", "type"]
             }
-            struct Sort: Encodable {
-                let date_utc: String
-            }
-            let limit: Int
-            let offset: Int
+
+            let limit: Int?
+            let offset: Int?
             var select = ["name", "date_unix", "links", "success"]
             var populate = Populate()
-            let sort: Sort?
+            let sort: String?
         }
 
         let query: Query?
         let options: Options?
+    }
+}
+
+// MARK: - Request Builder
+extension Launch.Request {
+    public class RequestBuilder {
+
+        typealias DateRange = Query.DateRange
+
+        private(set) var dateUtc: DateRange?
+        private(set) var success: Bool?
+
+        private(set) var limit: Int = 50
+        private(set) var offset: Int = 0
+        private(set) var sort: String?
+
+        @discardableResult
+        func setYear(year: String) -> RequestBuilder {
+            self.dateUtc = DateRange(year: year)
+            return self
+        }
+
+        @discardableResult
+        func setSuccess(success: Bool) -> RequestBuilder {
+            self.success = success
+            return self
+        }
+
+        @discardableResult
+        func setLimit(limit: Int) -> RequestBuilder {
+            if limit > 0 { self.limit = limit }
+            return self
+        }
+
+        @discardableResult
+        func setOffset(offset: Int) -> RequestBuilder {
+            if offset >= 0 { self.offset = offset }
+            return self
+        }
+
+        @discardableResult
+        func setLaunchDateSort(field: String = "date_utc", isAscending: Bool) -> RequestBuilder {
+            self.sort = isAscending ? field : "-\(field)"
+            return self
+        }
+
+        func build() -> Launch.Request {
+
+            var query: Query? = nil
+            if let dateUtc = dateUtc {
+                query = Query(dateUtc: dateUtc, success: self.success)
+            }
+
+            let options = Options(limit: self.limit,
+                                  offset: self.offset,
+                                  sort: self.sort)
+
+            return Launch.Request(query: query, options: options)
+        }
     }
 }
 
@@ -147,13 +213,13 @@ extension Launch {
         public let missionName: String
         public let launchDate: String
         public let launchTime: String
-        public let launchSuccess: Bool
+        public let launchSuccess: Bool?
         public let launchDaysTitle: String?
         public let launchDays: Int?
         public let metadata: Metadata
         public let rocket: Rocket
 
-        public init(id: String, missionName: String, launchDate: String, launchTime: String, launchSuccess: Bool, launchDays: Int?, launchDaysTitle: String?, metadata: Metadata, rocket: Rocket) {
+        public init(id: String, missionName: String, launchDate: String, launchTime: String, launchSuccess: Bool?, launchDays: Int?, launchDaysTitle: String?, metadata: Metadata, rocket: Rocket) {
             self.id = id
             self.missionName = missionName
             self.launchDate = launchDate
