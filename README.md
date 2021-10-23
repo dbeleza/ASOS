@@ -22,6 +22,10 @@ https://zonneveld.dev/the-clean-swift-architecture-explained/
 
 ![alt text](https://zonneveld.dev/wp-content/uploads/2019/05/VIP-CleanSwift-cycle.png)
 
+Apart from this 3 layers, this app has one more that is the `router`. `Router` is the layer responsible for the navigation between screens. The image gives a better illustration in how `Router` fits in VIP architecture.
+
+![alt text](https://miro.medium.com/max/1400/1*eSER5qbVsRS4snwmVp64Tg.png)
+
 # Dependencies
 The project has no third-party dependencies.
 
