@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
         return view
     }()
     private var networkBannerBottomConstraint: NSLayoutConstraint!
-    private let networkBannerHeight = Constants.Margin.baseline * 5
+    private let networkBannerHeight = Constants.UI.baseline * 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
