@@ -43,7 +43,7 @@ I'm sorry but I did not have time to investigate why after we run UI Tests, when
 In order to fix this, we need to reset the simulator 😩
 
 # API
-The API used for this project was V4 that is documented here https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs
+The API used for this project was V4 that is documented [here](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs).
 
 # Improvements
 1. UI
