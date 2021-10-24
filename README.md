@@ -51,11 +51,10 @@ The API used for this project was V4 that is documented [here](https://github.co
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
 4. Apply a big improvement on error handling
 5. Give a loading feedback to the user (one example is when app is fetching next launches page)
-6. Improve `Launch.Request` model (V4 is a bit painful)
-7. *Image loader* (used on cells to retrieve images from network) must be improved in order to be testable
-8. Add more unit tests
-9. Add many more UITests and implicity create mock data in order to be able to run without being dependent on external data (internet)
-10. ...
+6. *Image loader* (used on cells to retrieve images from network) must be improved in order to be testable
+7. Add more unit tests
+8. Add many more UITests and implicity create mock data in order to be able to run without being dependent on external data (internet)
+9. ...
 
 (I'm sure there are more improvements to do but in my opinion, these are the most notorios ones)
 
