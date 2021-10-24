@@ -11,7 +11,7 @@ The app consists of presenting a list with all the launches of advanced rockets,
 
 ## Exercise note
 
-In the exercise, it was mentioned that we should show a success or failure icon depending on if the launch was succeded or not. However, in this new API (V4) I noticed that some launches were be retrieve with `null`. For this cases I've decided to show a warning icon ⚠️.
+In the exercise, it was mentioned that we should show a success or failure icon depending on if the launch was succeded or not. However, in this new API (V4) I noticed that some *launches* were being retrieved with `null`. For this cases I've decided to show a warning icon ⚠️.
 
 # Architecture
 This projected was created with VIP architecture.
