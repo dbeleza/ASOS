@@ -41,7 +41,7 @@ Unfortunately the UI Tests are very very basic. They need mocks, they need to be
 
 **NOTE**
 
-I'm sorry but I did not have time to investigate why after we run UI Tests, when we launch the app, it appears with a black background screen under the tableView. I tried to do a quick investigation and I found some people saying that this might be caused by an XCode issue.
+I did not have time to investigate an issue after we run the app after executing UITests. When we launch the app, the table view appears with a black background as well as the cells. I tried to do a quick investigation but I did not found any fix for this.
 In order to fix this, we need to reset the simulator 😩
 
 # API
