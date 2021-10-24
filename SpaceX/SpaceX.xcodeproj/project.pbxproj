@@ -80,6 +80,8 @@
 		1F46C96E272408EA0018F24A /* LaunchListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C96D272408EA0018F24A /* LaunchListPresenterMock.swift */; };
 		1F46C9702724090C0018F24A /* LaunchListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C96F2724090C0018F24A /* LaunchListViewControllerMock.swift */; };
 		1F46C972272409270018F24A /* LaunchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C971272409270018F24A /* LaunchServiceMock.swift */; };
+		1F7B36BD27252F1E00E50DD0 /* String+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36BC27252F1D00E50DD0 /* String+NSAttributedString.swift */; };
+		1F7B36BF2725364000E50DD0 /* NSAttributedString+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36BE2725364000E50DD0 /* NSAttributedString+Builder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +178,8 @@
 		1F46C96D272408EA0018F24A /* LaunchListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListPresenterMock.swift; sourceTree = "<group>"; };
 		1F46C96F2724090C0018F24A /* LaunchListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewControllerMock.swift; sourceTree = "<group>"; };
 		1F46C971272409270018F24A /* LaunchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceMock.swift; sourceTree = "<group>"; };
+		1F7B36BC27252F1D00E50DD0 /* String+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSAttributedString.swift"; sourceTree = "<group>"; };
+		1F7B36BE2725364000E50DD0 /* NSAttributedString+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Builder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +365,8 @@
 				1F46C90C2722E9560018F24A /* DateFormatter.swift */,
 				1F46C9422723FDA00018F24A /* Int+Date.swift */,
 				1F46C9442723FDCD0018F24A /* UIImageView+Loader.swift */,
+				1F7B36BC27252F1D00E50DD0 /* String+NSAttributedString.swift */,
+				1F7B36BE2725364000E50DD0 /* NSAttributedString+Builder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				1F46C8F82722E3700018F24A /* LaunchService.swift in Sources */,
 				1F46C9482723FE210018F24A /* Accessibility.swift in Sources */,
 				1F46C9392723FA410018F24A /* LaunchDetailsInteractor.swift in Sources */,
+				1F7B36BF2725364000E50DD0 /* NSAttributedString+Builder.swift in Sources */,
 				1F46C8F02722CB7A0018F24A /* Services.swift in Sources */,
 				1F46C9412723FD160018F24A /* SpaceXRequest.swift in Sources */,
 				1F46C93B2723FA5D0018F24A /* LaunchDetailsPresenter.swift in Sources */,
@@ -760,6 +767,7 @@
 				1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */,
 				1F46C9012722E8120018F24A /* LaunchFilterInteractor.swift in Sources */,
 				1F46C9102722ED610018F24A /* Engine.swift in Sources */,
+				1F7B36BD27252F1E00E50DD0 /* String+NSAttributedString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

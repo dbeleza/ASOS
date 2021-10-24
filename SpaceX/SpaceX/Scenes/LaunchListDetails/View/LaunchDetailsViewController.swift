@@ -64,21 +64,21 @@ final class LaunchDetailsViewController: BaseViewController {
     }()
 
     private var articleButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.article.localized)
+        let button = UIButton.primarySpaceXButton(title: LocalizedString.article.localized)
         button.addTarget(self, action: #selector(tapArticleButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private var wikipediaButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.wikipedia.localized)
+        let button = UIButton.primarySpaceXButton(title: LocalizedString.wikipedia.localized)
         button.addTarget(self, action: #selector(tapWikipediaButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private var youtubeButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.youtube.localized)
+        let button = UIButton.primarySpaceXButton(title: LocalizedString.youtube.localized)
         button.addTarget(self, action: #selector(tapYoutubeButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

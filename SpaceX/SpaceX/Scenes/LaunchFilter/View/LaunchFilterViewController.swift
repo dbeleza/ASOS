@@ -126,21 +126,21 @@ final class LaunchFilterViewController: BaseViewController {
     }()
 
     private lazy var saveButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.save.localized)
+        let button = UIButton.primarySpaceXButton(title: LocalizedString.save.localized)
         button.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private lazy var resetButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.reset.localized)
+        let button = UIButton.primarySpaceXButton(title: LocalizedString.reset.localized)
         button.addTarget(self, action: #selector(didTapReset), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     private lazy var dismissButton: UIButton = {
-        let button = UIButton.createSpaceXButton(title: LocalizedString.close.localized)
+        let button = UIButton.secondarySpaceXButton(title: LocalizedString.close.localized)
         button.backgroundColor = UIColor.spaceGray
         button.addTarget(self, action: #selector(didTapDismiss), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
