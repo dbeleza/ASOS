@@ -5,7 +5,7 @@ Because of lack of time, in this project I did not had the opportunity to reflec
 I did not create branches (did committed everything directly in `master` and my commits were not detailed).
 
 # SpaceX
-SpaceX is a project created with Swift 5 with UIKit.
+SpaceX is a project created with Swift 5 and UIKit.
 
 The app consists of presenting a list with all the launches of advanced rockets, apply a filter date and give the possibility to user access more information about them.
 
