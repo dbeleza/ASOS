@@ -27,9 +27,7 @@
 "noResults" = "There are no launches";
 "noDetails" = "There are no details";
 "reset" = "Reset";
-
 "filterSuccess" = "Success";
 "filterFailure" = "Failure";
-
 "filterAscending" = "Ascending";
 "filterDescending" = "Descending";
