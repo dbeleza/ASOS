@@ -49,7 +49,7 @@ final class LaunchServiceImpl: LaunchService {
     }
 
     func retrieveFetchLaunchesQueryData(limit: Int, offset: Int, filter: Filter.State?) -> Data {
-        let requestBuilder = Launch.Request.RequestBuilder()
+        let requestBuilder = Launch.Request.Builder()
 
         if let filter = filter {
             requestBuilder

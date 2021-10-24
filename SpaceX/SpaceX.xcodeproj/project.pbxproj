@@ -25,7 +25,7 @@
 		1F46C8C92722AE810018F24A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8C82722AE810018F24A /* Constants.swift */; };
 		1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */; };
 		1F46C8D22722B05A0018F24A /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D12722B05A0018F24A /* CompanyService.swift */; };
-		1F46C8D52722B1080018F24A /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D42722B1080018F24A /* Company.swift */; };
+		1F46C8D52722B1080018F24A /* Company+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8D42722B1080018F24A /* Company+Response.swift */; };
 		1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8DD2722B2510018F24A /* LocalizedString.swift */; };
 		1F46C8DF2722B2990018F24A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F46C8E12722B2990018F24A /* Localizable.strings */; };
 		1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8E32722B4500018F24A /* String+Placeholders.swift */; };
@@ -35,8 +35,8 @@
 		1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */; };
 		1F46C8F02722CB7A0018F24A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8EF2722CB7A0018F24A /* Services.swift */; };
 		1F46C8F82722E3700018F24A /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8F72722E3700018F24A /* LaunchService.swift */; };
-		1F46C8FA2722E4370018F24A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8F92722E4370018F24A /* Launch.swift */; };
-		1F46C8FC2722E45D0018F24A /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8FB2722E45D0018F24A /* Filter.swift */; };
+		1F46C8FA2722E4370018F24A /* Launch+ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8F92722E4370018F24A /* Launch+ListResponse.swift */; };
+		1F46C8FC2722E45D0018F24A /* Filter+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8FB2722E45D0018F24A /* Filter+ViewModel.swift */; };
 		1F46C8FF2722E7D70018F24A /* LaunchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C8FE2722E7D70018F24A /* LaunchFilterViewController.swift */; };
 		1F46C9012722E8120018F24A /* LaunchFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9002722E8120018F24A /* LaunchFilterInteractor.swift */; };
 		1F46C9032722E82F0018F24A /* LaunchFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C9022722E82F0018F24A /* LaunchFilterPresenter.swift */; };
@@ -82,6 +82,11 @@
 		1F46C972272409270018F24A /* LaunchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F46C971272409270018F24A /* LaunchServiceMock.swift */; };
 		1F7B36BD27252F1E00E50DD0 /* String+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36BC27252F1D00E50DD0 /* String+NSAttributedString.swift */; };
 		1F7B36BF2725364000E50DD0 /* NSAttributedString+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36BE2725364000E50DD0 /* NSAttributedString+Builder.swift */; };
+		1F7B36C22725397700E50DD0 /* Company+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36C12725397700E50DD0 /* Company+ViewModel.swift */; };
+		1F7B36C527253A0200E50DD0 /* Launch+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36C427253A0200E50DD0 /* Launch+ViewModel.swift */; };
+		1F7B36C727253A5800E50DD0 /* Launch+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36C627253A5800E50DD0 /* Launch+Request.swift */; };
+		1F7B36CA27253CFC00E50DD0 /* Filter+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36C927253CFC00E50DD0 /* Filter+State.swift */; };
+		1F7B36CC27253E5500E50DD0 /* Launch+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B36CB27253E5500E50DD0 /* Launch+Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +129,7 @@
 		1F46C8C82722AE810018F24A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F46C8CE2722AFF20018F24A /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		1F46C8D12722B05A0018F24A /* CompanyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyService.swift; sourceTree = "<group>"; };
-		1F46C8D42722B1080018F24A /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		1F46C8D42722B1080018F24A /* Company+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Company+Response.swift"; sourceTree = "<group>"; };
 		1F46C8DD2722B2510018F24A /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		1F46C8E02722B2990018F24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F46C8E32722B4500018F24A /* String+Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Placeholders.swift"; sourceTree = "<group>"; };
@@ -134,8 +139,8 @@
 		1F46C8ED2722C4D40018F24A /* UIColor+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SpaceX.swift"; sourceTree = "<group>"; };
 		1F46C8EF2722CB7A0018F24A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		1F46C8F72722E3700018F24A /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
-		1F46C8F92722E4370018F24A /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		1F46C8FB2722E45D0018F24A /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		1F46C8F92722E4370018F24A /* Launch+ListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+ListResponse.swift"; sourceTree = "<group>"; };
+		1F46C8FB2722E45D0018F24A /* Filter+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter+ViewModel.swift"; sourceTree = "<group>"; };
 		1F46C8FE2722E7D70018F24A /* LaunchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterViewController.swift; sourceTree = "<group>"; };
 		1F46C9002722E8120018F24A /* LaunchFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterInteractor.swift; sourceTree = "<group>"; };
 		1F46C9022722E82F0018F24A /* LaunchFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFilterPresenter.swift; sourceTree = "<group>"; };
@@ -180,6 +185,11 @@
 		1F46C971272409270018F24A /* LaunchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceMock.swift; sourceTree = "<group>"; };
 		1F7B36BC27252F1D00E50DD0 /* String+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSAttributedString.swift"; sourceTree = "<group>"; };
 		1F7B36BE2725364000E50DD0 /* NSAttributedString+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Builder.swift"; sourceTree = "<group>"; };
+		1F7B36C12725397700E50DD0 /* Company+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Company+ViewModel.swift"; sourceTree = "<group>"; };
+		1F7B36C427253A0200E50DD0 /* Launch+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+ViewModel.swift"; sourceTree = "<group>"; };
+		1F7B36C627253A5800E50DD0 /* Launch+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+Request.swift"; sourceTree = "<group>"; };
+		1F7B36C927253CFC00E50DD0 /* Filter+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter+State.swift"; sourceTree = "<group>"; };
+		1F7B36CB27253E5500E50DD0 /* Launch+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch+Response.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,9 +349,9 @@
 		1F46C8D32722B0F10018F24A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F46C8D42722B1080018F24A /* Company.swift */,
-				1F46C8F92722E4370018F24A /* Launch.swift */,
-				1F46C8FB2722E45D0018F24A /* Filter.swift */,
+				1F7B36C02725393200E50DD0 /* Company */,
+				1F7B36C3272539C500E50DD0 /* Launch */,
+				1F7B36C827253CDE00E50DD0 /* Filter */,
 			);
 			name = Model;
 			path = Services;
@@ -580,6 +590,43 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		1F7B36C02725393200E50DD0 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8D42722B1080018F24A /* Company+Response.swift */,
+				1F7B36C12725397700E50DD0 /* Company+ViewModel.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		1F7B36C3272539C500E50DD0 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				1F7B36CD27253F5200E50DD0 /* Response */,
+				1F7B36C627253A5800E50DD0 /* Launch+Request.swift */,
+				1F7B36C427253A0200E50DD0 /* Launch+ViewModel.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		1F7B36C827253CDE00E50DD0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8FB2722E45D0018F24A /* Filter+ViewModel.swift */,
+				1F7B36C927253CFC00E50DD0 /* Filter+State.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		1F7B36CD27253F5200E50DD0 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				1F46C8F92722E4370018F24A /* Launch+ListResponse.swift */,
+				1F7B36CB27253E5500E50DD0 /* Launch+Response.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,24 +777,27 @@
 				1F46C90D2722E9560018F24A /* DateFormatter.swift in Sources */,
 				1F46C8CF2722AFF20018F24A /* ReachabilityService.swift in Sources */,
 				1F46C8EE2722C4D40018F24A /* UIColor+SpaceX.swift in Sources */,
+				1F7B36CC27253E5500E50DD0 /* Launch+Response.swift in Sources */,
 				1F46C9032722E82F0018F24A /* LaunchFilterPresenter.swift in Sources */,
 				1F46C9052722E8650018F24A /* LaunchFilterRouter.swift in Sources */,
 				1F46C8C72722AC8E0018F24A /* NetworkService.swift in Sources */,
+				1F7B36C22725397700E50DD0 /* Company+ViewModel.swift in Sources */,
 				1F46C9072722E8C00018F24A /* UIButton+SpaceX.swift in Sources */,
 				1F46C9452723FDCD0018F24A /* UIImageView+Loader.swift in Sources */,
 				1F46C9302723F9970018F24A /* LaunchListRouter.swift in Sources */,
 				1F46C92C2723F9360018F24A /* LaunchListInteractor.swift in Sources */,
 				1F46C8DE2722B2510018F24A /* LocalizedString.swift in Sources */,
-				1F46C8D52722B1080018F24A /* Company.swift in Sources */,
+				1F46C8D52722B1080018F24A /* Company+Response.swift in Sources */,
 				1F46C88B2722A6FC0018F24A /* LaunchListViewController.swift in Sources */,
 				1F46C8E72722C3CC0018F24A /* BaseViewController.swift in Sources */,
-				1F46C8FC2722E45D0018F24A /* Filter.swift in Sources */,
+				1F46C8FC2722E45D0018F24A /* Filter+ViewModel.swift in Sources */,
 				1F46C8872722A6FC0018F24A /* AppDelegate.swift in Sources */,
 				1F46C92E2723F95A0018F24A /* LaunchListPresenter.swift in Sources */,
+				1F7B36CA27253CFC00E50DD0 /* Filter+State.swift in Sources */,
 				1F46C8C22722AA500018F24A /* SpaceXFont.swift in Sources */,
 				1F46C8FF2722E7D70018F24A /* LaunchFilterViewController.swift in Sources */,
 				1F46C8EA2722C4440018F24A /* NetworkBannerView.swift in Sources */,
-				1F46C8FA2722E4370018F24A /* Launch.swift in Sources */,
+				1F46C8FA2722E4370018F24A /* Launch+ListResponse.swift in Sources */,
 				1F46C9372723FA230018F24A /* LaunchDetailsViewController.swift in Sources */,
 				1F46C9432723FDA00018F24A /* Int+Date.swift in Sources */,
 				1F46C93F2723FCFA0018F24A /* Request.swift in Sources */,
@@ -760,7 +810,9 @@
 				1F46C93B2723FA5D0018F24A /* LaunchDetailsPresenter.swift in Sources */,
 				1F46C8892722A6FC0018F24A /* SceneDelegate.swift in Sources */,
 				1F46C8C92722AE810018F24A /* Constants.swift in Sources */,
+				1F7B36C727253A5800E50DD0 /* Launch+Request.swift in Sources */,
 				1F46C9282723F8EA0018F24A /* LaunchListTableViewCell.swift in Sources */,
+				1F7B36C527253A0200E50DD0 /* Launch+ViewModel.swift in Sources */,
 				1F46C93D2723FA850018F24A /* LaunchDetailsRouter.swift in Sources */,
 				1F46C9242723F7AA0018F24A /* Environment.swift in Sources */,
 				1F46C8E42722B4500018F24A /* String+Placeholders.swift in Sources */,
