@@ -22,7 +22,9 @@ https://zonneveld.dev/the-clean-swift-architecture-explained/
 
 ![alt text](https://zonneveld.dev/wp-content/uploads/2019/05/VIP-CleanSwift-cycle.png)
 
-Apart from this 3 layers, this app has one more that is the `router`. `Router` is the layer responsible for the navigation between screens. The image gives a better illustration in how `Router` fits in VIP architecture.
+Apart from this three layers, this app has two more components, `Router` and `Configurator`. `Router` is the layer responsible for the navigation between screens and `Configurator` is a factory class responsible to create this layers.
+
+The next image gives you a better overview.
 
 ![alt text](https://miro.medium.com/max/1400/1*eSER5qbVsRS4snwmVp64Tg.png)
 
