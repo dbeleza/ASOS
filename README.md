@@ -52,7 +52,7 @@ The API used for this project was V4 that is documented [here](https://github.co
 2. Improve Network Reachability and improve integration with UI/Network actions
 3. Try to reduce/clean some methods from View/Interator/Presenter protocols (maybe using a single method that receives an enum action)
 4. Apply a big improvement on error handling
-5. Give a loading feedback to the user (one example is when app is fetching next launches page)
+5. Give a loading feedback for each section to the user (one example is when app is fetching next launches page)
 6. *Image loader* (used on cells to retrieve images from network) must be improved in order to be testable
 7. Add more unit tests
 8. Add many more UITests and implicity create mock data in order to be able to run without being dependent on external data (internet)
