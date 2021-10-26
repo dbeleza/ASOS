@@ -77,6 +77,7 @@ final class LaunchListViewController: BaseViewController {
 
     private var launchesDataSource = [Launch.ViewModel]() {
         didSet {
+            // To improve: As I mentioned on README (5th point), because I was run out of time, my goal was to have independent loading for each section. This is an ugly quick way to show something to the user while he is waiting for the network response
             if companyViewModel != nil {
                 isSpinnerHidden = true
             }
@@ -84,6 +85,7 @@ final class LaunchListViewController: BaseViewController {
     }
     private var companyViewModel: Company.ViewModel? {
         didSet {
+            // To improve: As I mentioned on README (5th point), because I was run out of time, my goal was to have independent loading for each section. This is an ugly quick way to show something to the user while he is waiting for the network response
             if !launchesDataSource.isEmpty {
                 isSpinnerHidden = true
             }
