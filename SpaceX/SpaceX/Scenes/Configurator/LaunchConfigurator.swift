@@ -14,7 +14,7 @@ final class LaunchConfigurator {
         presenter.viewController = viewController
 
         let engine = Engine()
-        let interator = LaunchListInteractorImpl(engine: engine,presenter: presenter)
+        let interator = LaunchListInteractorImpl(engine: engine, presenter: presenter)
 
         let router = LaunchListRouterImpl()
         router.navigationController = viewController.navigationController
